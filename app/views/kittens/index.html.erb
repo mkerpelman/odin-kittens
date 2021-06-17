@@ -1,3 +1,9 @@
 <h1>Kitten List</h1>
 
-<%= render "kitten_data_display" %>
+<% @kittens.each do |k| %>
+  <p><strong>Name:</strong> <%= k.name %></p>
+  <p><strong>Age:</strong> <%= k.age %></p>
+  <p><strong>Cuteness:</strong><%= k.cuteness %>/5</p>
+  <p><strong>Softness:</strong><%= k.softness %>/5</p>
+  <br>
+<% end %>
