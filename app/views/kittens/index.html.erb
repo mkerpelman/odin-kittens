@@ -1,9 +1,13 @@
 <h1>Kitten List</h1>
+<%= button_to "New Kitten", new_kitten_path, :method => :get %>
 
 <% @kittens.each do |k| %>
   <p><strong>Name:</strong> <%= k.name %></p>
   <p><strong>Age:</strong> <%= k.age %></p>
   <p><strong>Cuteness:</strong><%= k.cuteness %>/5</p>
   <p><strong>Softness:</strong><%= k.softness %>/5</p>
+  <%= button_to "View", kitten_path(k.id), :method => :get %>
+  <%= button_to "Edit", edit_kitten_path(k.id), :method => :get %>
+  <%= button_to "Delete", kitten_path(k.id), :method => :delete %>
   <br>
 <% end %>
